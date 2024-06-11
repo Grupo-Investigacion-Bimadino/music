@@ -1,26 +1,35 @@
 import { Injectable } from '@nestjs/common';
 import { CreateSongDto } from './dto/create-song.dto';
 import { UpdateSongDto } from './dto/update-song.dto';
+import { InjectModel } from '@nestjs/mongoose';
+import { Model } from 'mongoose';
+import { Song } from './schemas/song.schema';
 
 @Injectable()
 export class SongsService {
+  constructor(@InjectModel(Song.name) private songModel: Model<Song>) {}
   create(createSongDto: CreateSongDto) {
-    return 'This action adds a new song';
+    const createdSong = new this.songModel(createSongDto);
+    return createdSong.save();
   }
 
   findAll() {
-    return `This action returns all songs`;
+    return this.songModel.find().populate('lists').populate('artist').exec();
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} song`;
+  findOne(id: string) {
+    return this.songModel.findById(id).exec();
   }
 
-  update(id: number, updateSongDto: UpdateSongDto) {
-    return `This action updates a #${id} song`;
+  update(id: string, updateSongDto: UpdateSongDto) {
+    return this.songModel
+      .findByIdAndUpdate(id, updateSongDto, {
+        new: true,
+      })
+      .exec();
   }
 
-  remove(id: number) {
-    return `This action removes a #${id} song`;
+  remove(id: string) {
+    return this.songModel.findByIdAndDelete(id).exec();
   }
 }

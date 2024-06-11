@@ -17,7 +17,6 @@ import { UsersModule } from './users/users.module';
     ConfigModule.forRoot({ envFilePath: '.env', isGlobal: true }),
     ServeStaticModule.forRoot({ rootPath: join(__dirname, '..', 'client') }),
     MongooseModule.forRoot(process.env.DB_URI),
-
     ArtistModule,
     SongsModule,
     ListModule,
