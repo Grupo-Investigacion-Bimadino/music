@@ -1,7 +1,8 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { Document, Types } from 'mongoose';
 import * as mongoose from 'mongoose';
-import { Artist } from 'src/artist/schemas/Artist.schema';
+import { Artist } from 'src/artists/schemas/Artist.schema';
+import { List } from 'src/list/schemas/List.schema';
 
 @Schema({
   timestamps: true,
@@ -27,8 +28,11 @@ export class Song extends Document {
   @Prop({ type: String, default: 'No features' })
   picture: string;
 
-  @Prop({ type: mongoose.Schema.Types.ObjectId, ref: 'Artist' })
+  @Prop({ type: [mongoose.Schema.Types.ObjectId], ref: 'Artist' })
   artists: Artist[];
+
+  @Prop({ type: [mongoose.Schema.Types.ObjectId], ref: 'List' })
+  lists: List[];
 }
 
 export const SongSchema = SchemaFactory.createForClass(Song);

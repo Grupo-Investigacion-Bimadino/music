@@ -14,11 +14,15 @@ export class SongsService {
   }
 
   findAll() {
-    return this.songModel.find().populate('lists').populate('artist').exec();
+    return this.songModel.find().populate('lists').populate('artists').exec();
   }
 
   findOne(id: string) {
-    return this.songModel.findById(id).exec();
+    return this.songModel
+      .findById(id)
+      .populate('lists')
+      .populate('artists')
+      .exec();
   }
 
   update(id: string, updateSongDto: UpdateSongDto) {

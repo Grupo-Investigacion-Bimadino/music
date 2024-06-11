@@ -8,6 +8,7 @@ import { Artist } from './schemas/artist.schema';
 @Injectable()
 export class ArtistService {
   constructor(@InjectModel(Artist.name) private artistModel: Model<Artist>) {}
+
   create(createArtistDto: CreateArtistDto) {
     const createdArtist = new this.artistModel(createArtistDto);
     return createdArtist.save();
@@ -18,7 +19,7 @@ export class ArtistService {
   }
 
   findOne(id: string) {
-    return this.artistModel.findById;
+    return this.artistModel.findById(id).populate('songs').exec();
   }
 
   update(id: string, updateArtistDto: UpdateArtistDto) {

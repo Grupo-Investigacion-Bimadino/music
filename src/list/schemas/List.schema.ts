@@ -1,7 +1,7 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { Document, Types } from 'mongoose';
 import * as mongoose from 'mongoose';
-import { Artist } from 'src/artist/schemas/Artist.schema';
+import { User } from 'src/users/schemas/User.schema';
 import { Song } from 'src/songs/schemas/Song.schema';
 
 @Schema({
@@ -22,10 +22,10 @@ export class List extends Document {
   @Prop({ type: String, default: 'No gender' })
   gender: string;
 
-  @Prop({ type: mongoose.Schema.Types.ObjectId, ref: 'Artist' })
-  user: Artist;
+  @Prop({ type: mongoose.Schema.Types.ObjectId, ref: 'User' })
+  user: User;
 
-  @Prop({ type: mongoose.Schema.Types.ObjectId, ref: 'Songs' })
+  @Prop({ type: [mongoose.Schema.Types.ObjectId], ref: 'Song' })
   songs: Song[];
 }
 

@@ -19,7 +19,7 @@ export class Artist extends Document {
   @Prop()
   lastname2: string;
 
-  @Prop({ type: mongoose.Schema.Types.ObjectId, ref: 'Song' })
+  @Prop({ type: [mongoose.Schema.Types.ObjectId], ref: 'Song' })
   songs: Song[];
 }
 

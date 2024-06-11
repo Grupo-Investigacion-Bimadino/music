@@ -7,7 +7,7 @@ import { MongooseModule } from '@nestjs/mongoose';
 import { join } from 'path';
 
 import { AppService } from './app.service';
-import { ArtistModule } from './artist/artist.module';
+import { ArtistModule } from './artists/artists.module';
 import { SongsModule } from './songs/songs.module';
 import { ListModule } from './list/list.module';
 import { UsersModule } from './users/users.module';

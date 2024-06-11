@@ -5,7 +5,9 @@ import { MongooseModule } from '@nestjs/mongoose';
 import { List, ListSchema } from './schemas/List.schema';
 
 @Module({
-  imports: [MongooseModule.forFeature([{ name: 'List', schema: ListSchema }])],
+  imports: [
+    MongooseModule.forFeature([{ name: List.name, schema: ListSchema }]),
+  ],
   controllers: [ListController],
   providers: [ListService],
 })

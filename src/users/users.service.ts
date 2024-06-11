@@ -9,7 +9,7 @@ import { User } from './schemas/User.schema';
 export class UsersService {
   constructor(@InjectModel(User.name) private userModel: Model<User>) {}
 
-  create(createUserDto: CreateUserDto) {
+  async create(createUserDto: CreateUserDto) {
     const createdUser = new this.userModel(createUserDto);
     return createdUser.save();
   }

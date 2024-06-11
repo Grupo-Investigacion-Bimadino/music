@@ -11,13 +11,13 @@
 			"name": "Artist",
 			"item": [
 				{
-					"name": "Artists",
+					"name": "New Artist",
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"name1\":\"Alexander\",\n    \"name2\":\"Enrique\",\n    \"lastname1\":\"Toscano\",\n    \"lastname2\":\"Ricardo-\"\n}",
+							"raw": "{    \n    \"name1\": \"Freddie\",\n    \"name2\": \"\",\n    \"lastname1\": \"Mercury\",\n    \"lastname2\": \"\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -25,60 +25,60 @@
 							}
 						},
 						"url": {
-							"raw": "{{base_url_sound}}/artist",
+							"raw": "{{base_url_sound}}/artists",
 							"host": [
 								"{{base_url_sound}}"
 							],
 							"path": [
-								"artist"
+								"artists"
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "Artists",
+					"name": "Get Artists",
 					"request": {
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{base_url_sound}}/artist",
+							"raw": "{{base_url_sound}}/artists",
 							"host": [
 								"{{base_url_sound}}"
 							],
 							"path": [
-								"artist"
+								"artists"
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "Artist",
+					"name": "Get Artist",
 					"request": {
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{base_url_sound}}/artist/2",
+							"raw": "{{base_url_sound}}/artists/66686e75ee470b4125d9c9f7",
 							"host": [
 								"{{base_url_sound}}"
 							],
 							"path": [
-								"artist",
-								"2"
+								"artists",
+								"66686e75ee470b4125d9c9f7"
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "Artist",
+					"name": "Update Artist",
 					"request": {
 						"method": "PATCH",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"id\": 2,\n    \"name1\": \"Jhon\",\n    \"name2\": \"José\",\n    \"lastName1\": \"Doe\",\n    \"lastName2\": \"Martinez\"\n}",
+							"raw": "{        \n    \"name1\": \"Freddie\",\n    \"name2\": \"\",\n    \"lastname1\": \"Mercury\",\n    \"lastname2\": \"\",\n    \"songs\": [\"66686ec7eca5fac4b3c1ea61\", \"66686ff8eca5fac4b3c1ea64\"]\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -86,31 +86,31 @@
 							}
 						},
 						"url": {
-							"raw": "{{base_url_sound}}/artist/2",
+							"raw": "{{base_url_sound}}/artists/66686e75ee470b4125d9c9f7",
 							"host": [
 								"{{base_url_sound}}"
 							],
 							"path": [
-								"artist",
-								"2"
+								"artists",
+								"66686e75ee470b4125d9c9f7"
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "Artist",
+					"name": "Delete Artist",
 					"request": {
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "{{base_url_sound}}/artist/1",
+							"raw": "{{base_url_sound}}/artists/66686e75ee470b4125d9c9f7",
 							"host": [
 								"{{base_url_sound}}"
 							],
 							"path": [
-								"artist",
-								"1"
+								"artists",
+								"66686e75ee470b4125d9c9f7"
 							]
 						}
 					},
@@ -128,7 +128,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"nickname\": \"user_demo\",\n    \"email\":\"user_demo_music@yopmail.com\",\n    \"password\":\"Msznxbgejs\",\n    \"description\":\"Usuario de prueba\",\n    \"picture\":\"/user_demo.png\"\n}",
+							"raw": "{\n    \"nickname\": \"user_demo\",\n    \"email\": \"user_demo_music@yopmail.com\",\n    \"password\": \"Msznxbgejs\",\n    \"description\": \"Usuario de prueba\",\n    \"picture\": \"/user_demo.png\"    \n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -149,13 +149,13 @@
 					},
 					"response": [
 						{
-							"name": "Result Request",
+							"name": "New User",
 							"originalRequest": {
 								"method": "POST",
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"nickname\": \"user_demo\",\n    \"email\":\"user_demo_music@yopmail.com\",\n    \"password\":\"Msznxbgejs\",\n    \"description\":\"Usuario de prueba\",\n    \"picture\":\"/user_demo.png\"\n}",
+									"raw": "{\n    \"nickname\": \"user_demo\",\n    \"email\": \"user_demo_music@yopmail.com\",\n    \"password\": \"Msznxbgejs\",\n    \"description\": \"Usuario de prueba\",\n    \"picture\": \"/user_demo.png\"    \n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -192,11 +192,11 @@
 								},
 								{
 									"key": "ETag",
-									"value": "W/\"10a-RlJZ9gM7HaDohDh5aeBrEb3RUxo\""
+									"value": "W/\"10a-h7dcljFYGFgJBBaWcGe/RUhT8vw\""
 								},
 								{
 									"key": "Date",
-									"value": "Mon, 10 Jun 2024 13:31:39 GMT"
+									"value": "Tue, 11 Jun 2024 15:14:53 GMT"
 								},
 								{
 									"key": "Connection",
@@ -208,7 +208,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"nickname\": \"user_demo\",\n    \"email\": \"user_demo_music@yopmail.com\",\n    \"password\": \"Msznxbgejs\",\n    \"description\": \"Usuario de prueba\",\n    \"picture\": \"/user_demo.png\",\n    \"_id\": \"6667003bb4dcadbc4adb95ff\",\n    \"createdAt\": \"2024-06-10T13:31:39.693Z\",\n    \"updatedAt\": \"2024-06-10T13:31:39.693Z\",\n    \"__v\": 0\n}"
+							"body": "{\n    \"nickname\": \"user_demo\",\n    \"email\": \"user_demo_music@yopmail.com\",\n    \"password\": \"Msznxbgejs\",\n    \"description\": \"Usuario de prueba\",\n    \"picture\": \"/user_demo.png\",\n    \"_id\": \"666869ecf6bc70ebdf49223c\",\n    \"createdAt\": \"2024-06-11T15:14:52.995Z\",\n    \"updatedAt\": \"2024-06-11T15:14:52.995Z\",\n    \"__v\": 0\n}"
 						}
 					]
 				},
@@ -291,7 +291,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:4000/users/6667003bb4dcadbc4adb95ff",
+							"raw": "http://localhost:4000/users/666869ecf6bc70ebdf49223c",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -299,7 +299,7 @@
 							"port": "4000",
 							"path": [
 								"users",
-								"6667003bb4dcadbc4adb95ff"
+								"666869ecf6bc70ebdf49223c"
 							]
 						}
 					},
@@ -361,7 +361,7 @@
 					]
 				},
 				{
-					"name": "New Request",
+					"name": "Update User",
 					"request": {
 						"method": "PATCH",
 						"header": [],
@@ -375,7 +375,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:4000/users/6667003bb4dcadbc4adb95ff",
+							"raw": "http://localhost:4000/users/666839bd68f6a2687901d5fa",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -383,19 +383,19 @@
 							"port": "4000",
 							"path": [
 								"users",
-								"6667003bb4dcadbc4adb95ff"
+								"666839bd68f6a2687901d5fa"
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "New Request",
+					"name": "Delete User",
 					"request": {
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:4000/users/6667033cd4561bdc07df789f",
+							"raw": "http://localhost:4000/users/666839bd68f6a2687901d5fa",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -403,7 +403,7 @@
 							"port": "4000",
 							"path": [
 								"users",
-								"6667033cd4561bdc07df789f"
+								"666839bd68f6a2687901d5fa"
 							]
 						}
 					},
@@ -421,7 +421,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"name\":\"80s\",\n    \"description\":\"80s music\",\n    \"picture\":\"music_80s.png\",\n    \"gender\":\"Rock\",\n    \"user\":\"6667003bb4dcadbc4adb95ff\"    \n}\n",
+							"raw": "{\n    \"name\":\"80s\",\n    \"description\":\"80s music\",\n    \"picture\":\"music_80s.png\",\n    \"gender\":\"Rock\",\n    \"user\":\"666869ecf6bc70ebdf49223c\"    \n}\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -442,13 +442,13 @@
 					},
 					"response": [
 						{
-							"name": "Result Request",
+							"name": "New List",
 							"originalRequest": {
 								"method": "POST",
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"name\":\"80s\",\n    \"description\":\"80s music\",\n    \"picture\":\"music_80s.png\",\n    \"gender\":\"Rock\",\n    \"user\":\"6667003bb4dcadbc4adb95ff\"    \n}\n",
+									"raw": "{\n    \"name\":\"80s\",\n    \"description\":\"80s music\",\n    \"picture\":\"music_80s.png\",\n    \"gender\":\"Rock\",\n    \"user\":\"666869ecf6bc70ebdf49223c\"    \n}\n",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -485,11 +485,11 @@
 								},
 								{
 									"key": "ETag",
-									"value": "W/\"eb-nH/iVXU4zYZWt0DTSOUmA0f5owA\""
+									"value": "W/\"eb-FEi1snfDC0lztic+dvogW8rqyds\""
 								},
 								{
 									"key": "Date",
-									"value": "Mon, 10 Jun 2024 14:52:30 GMT"
+									"value": "Tue, 11 Jun 2024 15:16:05 GMT"
 								},
 								{
 									"key": "Connection",
@@ -501,12 +501,12 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"name\": \"80s\",\n    \"description\": \"80s music\",\n    \"picture\": \"music_80s.png\",\n    \"gender\": \"Rock\",\n    \"user\": \"6667003bb4dcadbc4adb95ff\",\n    \"_id\": \"6667132dea5880d395bba29b\",\n    \"createdAt\": \"2024-06-10T14:52:29.922Z\",\n    \"updatedAt\": \"2024-06-10T14:52:29.922Z\",\n    \"__v\": 0\n}"
+							"body": "{\n    \"name\": \"80s\",\n    \"description\": \"80s music\",\n    \"picture\": \"music_80s.png\",\n    \"gender\": \"Rock\",\n    \"user\": \"666869ecf6bc70ebdf49223c\",\n    \"_id\": \"66686a34f6bc70ebdf49223e\",\n    \"createdAt\": \"2024-06-11T15:16:04.939Z\",\n    \"updatedAt\": \"2024-06-11T15:16:04.939Z\",\n    \"__v\": 0\n}"
 						}
 					]
 				},
 				{
-					"name": "Get lists",
+					"name": "Get Lists",
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -525,7 +525,7 @@
 					"response": []
 				},
 				{
-					"name": "Get list",
+					"name": "Get List",
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -545,13 +545,13 @@
 					"response": []
 				},
 				{
-					"name": "New Request",
+					"name": "Update List",
 					"request": {
 						"method": "PATCH",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"name\":\"80s\",\n    \"description\":\"80s music\",\n    \"picture\":\"music_80s.png\",\n    \"gender\":\"Rock\",\n    \"user\":\"6667003bb4dcadbc4adb95ff\"    \n}\n",
+							"raw": "{\n    \"name\":\"80s\",\n    \"description\":\"80s music\",\n    \"picture\":\"music_80s.png\",\n    \"gender\":\"Rock\",\n    \"user\":\"6667003bb4dcadbc4adb95ff\",\n    \"songs\":[\"66686ec7eca5fac4b3c1ea61\", \"66686ff8eca5fac4b3c1ea64\"]\n}\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -559,7 +559,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:4000/lists/6667132dea5880d395bba29b",
+							"raw": "http://localhost:4000/lists/66686a34f6bc70ebdf49223e",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -567,14 +567,14 @@
 							"port": "4000",
 							"path": [
 								"lists",
-								"6667132dea5880d395bba29b"
+								"66686a34f6bc70ebdf49223e"
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "Delete list",
+					"name": "Delete List",
 					"request": {
 						"method": "DELETE",
 						"header": [],
@@ -599,13 +599,13 @@
 			"name": "Song",
 			"item": [
 				{
-					"name": "New song",
+					"name": "New Song",
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"name\":\"Bohemian Rhapsody\",\n    \"album\":\"A Night at the Opera\",\n    \"year\":\"1975\",\n    \"url\":\"fJ9rUzIMcZQ?si=HxbbFpimMXc8NUi1\",\n    \"duration\":\"5:55\",\n    \"picture\":\"\"\n}",
+							"raw": "{\n    \"name\":\"Somebody to Love\",\n    \"album\":\"A Day at the Races\",\n    \"year\":\"1976\",\n    \"url\":\"kijpcUv-b8M?si=lbgJ_JlRXQQ9JEP0\",\n    \"duration\":\"4:56\",\n    \"picture\":\"\",\n    \"artists\":[\"66686e75ee470b4125d9c9f7\"],\n    \"lists\":[\"66686a34f6bc70ebdf49223e\"]\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -627,7 +627,7 @@
 					"response": []
 				},
 				{
-					"name": "Get songs",
+					"name": "Get Songs",
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -646,7 +646,7 @@
 					"response": []
 				},
 				{
-					"name": "New Request",
+					"name": "Get Song by id",
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -666,13 +666,13 @@
 					"response": []
 				},
 				{
-					"name": "New Request",
+					"name": "Update Song",
 					"request": {
 						"method": "PATCH",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"name\":\"Bohemian Rhapsody\",\n    \"album\":\"A Night at the Opera\",\n    \"year\":\"1975\",\n    \"url\":\"fJ9rUzIMcZQ?si=HxbbFpimMXc8NUi1\",\n    \"duration\":\"5:55\",\n    \"picture\":\"\",\n    \"artists\":[]\n}",
+							"raw": "{\n    \"name\":\"Somebody to Love\",\n    \"album\":\"A Day at the Races\",\n    \"year\":\"1976\",\n    \"url\":\"kijpcUv-b8M?si=lbgJ_JlRXQQ9JEP0\",\n    \"duration\":\"4:56\",\n    \"picture\":\"\",\n    \"artists\":[\"66686e75ee470b4125d9c9f7\"],\n    \"lists\": [\"66686a34f6bc70ebdf49223e\"]\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -680,7 +680,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:4000/songs/66671676a88a53c164decadf",
+							"raw": "http://localhost:4000/songs/66686ff8eca5fac4b3c1ea64",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -688,14 +688,14 @@
 							"port": "4000",
 							"path": [
 								"songs",
-								"66671676a88a53c164decadf"
+								"66686ff8eca5fac4b3c1ea64"
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "New Request",
+					"name": "Delete Song",
 					"request": {
 						"method": "DELETE",
 						"header": [],
