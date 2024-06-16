@@ -15,7 +15,11 @@ export class ArtistService {
   }
 
   findAll() {
-    return this.artistModel.find().populate('songs').exec();
+    return this.artistModel
+      .find()
+      .populate('songs')
+      .select('_id name1 name2 lastname1 lastname2 songs description picture')
+      .exec();
   }
 
   findOne(id: string) {

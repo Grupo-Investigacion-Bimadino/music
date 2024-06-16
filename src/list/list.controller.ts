@@ -6,6 +6,7 @@ import {
   Patch,
   Param,
   Delete,
+  Query,
 } from '@nestjs/common';
 import { ListService } from './list.service';
 import { CreateListDto } from './dto/create-list.dto';
@@ -28,6 +29,11 @@ export class ListController {
   @Get(':id')
   findOne(@Param('id') id: string) {
     return this.listService.findOne(id);
+  }
+
+  @Get('findByUser/:userId')
+  findByUser(@Param('userId') userId: string) {
+    return this.listService.findByUser(userId);
   }
 
   @Patch(':id')

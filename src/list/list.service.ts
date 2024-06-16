@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { CreateListDto } from './dto/create-list.dto';
 import { UpdateListDto } from './dto/update-list.dto';
 import { InjectModel } from '@nestjs/mongoose';
-import { Model } from 'mongoose';
+import { Model, Types } from 'mongoose';
 import { List } from './schemas/list.schema';
 
 @Injectable()
@@ -23,6 +23,29 @@ export class ListService {
       .findById(id)
       .populate('songs')
       .populate('user')
+      .exec();
+  }
+
+  findByUser(id: string) {
+    let objectId;
+    try {
+      objectId = new Types.ObjectId(id);
+    } catch (error) {
+      throw new Error(`Invalid userId: ${id}`);
+    }
+
+    if (!Types.ObjectId.isValid(objectId)) {
+      throw new Error(`Invalid user id: ${id}`);
+    }
+    return this.listModel
+      .find({ user: id })
+      .populate({
+        path: 'songs',
+        populate: {
+          path: 'artists',
+          model: 'Artist',
+        },
+      })
       .exec();
   }
 
